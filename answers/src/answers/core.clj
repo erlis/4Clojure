@@ -1,6 +1,7 @@
-(ns answers.core)
+(ns answers.core
+  (:require [answers.elementary :as elementary]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+
+(defn -main
+  []
+  (println (elementary/nothing-but-the-truth true)))
