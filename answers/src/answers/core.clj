@@ -2,6 +2,12 @@
   (:require [answers.elementary :as elementary]))
 
 
+(defmacro show
+  [f & args]
+  (let [f-var# (resolve f)]
+    `(println ~f-var# (~f ~@args))))
+
+
 (defn -main
   []
-  (println (elementary/nothing-but-the-truth true)))
+  (show elementary/nothing-but-the-truth true))
