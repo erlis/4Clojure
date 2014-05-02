@@ -10,4 +10,7 @@
 
 (defn -main
   []
-  (show elementary/nothing-but-the-truth true))
+  (show elementary/nothing-but-the-truth true)
+  (show elementary/simple-math 4)
+  (show elementary/intro-to-string "HELLO WORLD")
+  (show elementary/intro-to-lists :a :b :c))
