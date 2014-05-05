@@ -1,6 +1,18 @@
 (ns answers.elementary
   (:use [clojure.test :only (is)]))
 
+(defn intro-to-sets
+  "Sets are collections of unique values."
+  [__]
+  (is (= __ (set '(:a :a :b :c :c :c :c :d :d))))
+  (is (= __ (clojure.set/union #{:a :b :c} #{:b :c :d}))))
+
+(defn vectors-conj
+  "When operating on a Vector, the conj function will return a new vector with one or more items 'added' to the end."
+  [__]
+  (is (= __ (conj [1 2 3] 4)))
+  (is (= __ (conj [1 2] 3 4))))
+
 
 (defn intro-to-vectors
   "Vectors can be constructed several ways. You can compare them with lists."

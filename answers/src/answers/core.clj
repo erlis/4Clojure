@@ -15,4 +15,6 @@
   (show elementary/intro-to-string "HELLO WORLD")
   (show elementary/intro-to-lists :a :b :c)
   (show elementary/lists-conj '(1 2 3 4) )
-  (show elementary/intro-to-vectors :a :b :c))
+  (show elementary/intro-to-vectors :a :b :c)
+  (show elementary/vectors-conj [1 2 3 4])
+  (show elementary/intro-to-sets #{:a :b :c :d}))
