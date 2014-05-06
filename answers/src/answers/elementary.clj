@@ -2,6 +2,21 @@
   (:use [clojure.test :only (is)]))
 
 
+(defn intro-to-functions
+  "Clojure has many different ways to create functions."
+  [__]
+  (is (= __ ((fn add-five [x] (+ x 5)) 3)))
+  (is (= __ ((fn [x] (+ x 5)) 3)))
+  (is (= __ (#(+ % 5) 3)))
+  (is (= __ ((partial + 5) 3))))
+
+
+(defn sequences-rest
+  "The rest function will return all the items of a sequence except the first."
+  [__]
+  (is (= __ (rest [10 20 30 40]))))
+
+
 (defn intro-to-seqs
   "All Clojure collections support sequencing. You can operate on sequences with functions like first, second, and last."
   [__]

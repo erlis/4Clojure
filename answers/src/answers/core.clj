@@ -21,4 +21,7 @@
   (show elementary/sets-conj 2)
   (show elementary/intro-to-maps 20)
   (show elementary/maps-conj {:b 2})
-  (show elementary/intro-to-seqs 3))
+  (show elementary/intro-to-seqs 3)
+  (show elementary/sequences-rest [20 30 40])
+  (show elementary/intro-to-functions 8)
+)
