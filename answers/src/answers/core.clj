@@ -24,4 +24,8 @@
   (show elementary/intro-to-seqs 3)
   (show elementary/sequences-rest [20 30 40])
   (show elementary/intro-to-functions 8)
+  (show elementary/double-down #(* 2 %) )
+  (show elementary/hello-world #(str "Hello, " % "!" ) )
+  (show elementary/sequences-map '(6 7 8))
+  (show elementary/sequences-filter '(6 7))
 )

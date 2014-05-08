@@ -2,6 +2,35 @@
   (:use [clojure.test :only (is)]))
 
 
+(defn sequences-filter
+  "The filter function takes two arguments: a predicate function (f) and a sequence (s). Filter returns a new sequence consisting of all the items of s for which (f item) returns true."
+  [__]
+  (is (= __ (filter #(> % 5) '(3 4 5 6 7)))))
+
+
+(defn sequences-map
+  "The map function takes two arguments: a function (f) and a sequence (s). Map returns a new sequence consisting of the result of applying f to each item of s. Do not confuse the map function with the map data structure."
+  [__]
+  (is (= __ (map #(+ % 5) '(1 2 3)))))
+
+
+(defn hello-world
+  "Write a function which returns a personalized greeting."
+  [__]
+  (is (= (__ "Dave") "Hello, Dave!"))
+  (is (= (__ "Jenn") "Hello, Jenn!"))
+  (is (= (__ "Rhea") "Hello, Rhea!")))
+
+
+(defn double-down
+  "Write a function which doubles a number."
+  [__]
+  (is (= (__ 2) 4))
+  (is (= (__ 3) 6))
+  (is (= (__ 11) 22))
+  (is (= (__ 7) 14)))
+
+
 (defn intro-to-functions
   "Clojure has many different ways to create functions."
   [__]
