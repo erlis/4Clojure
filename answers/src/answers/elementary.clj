@@ -2,6 +2,50 @@
   (:use [clojure.test :only (is)]))
 
 
+(defn rearranging-code->
+  "The -> macro threads an expression x through a variable number of forms. First, x is inserted as the second item in the first form, making a list of it if it is not a list already. Then the first form is inserted as the second item in the second form, making a list of that form if necessary. This process continues for all the forms. Using -> can sometimes make your code more readable."
+  [__]
+  (is (= (__ (sort (rest (reverse [2 5 4 1 3 6]))))
+         (-> [2 5 4 1 3 6] (reverse) (rest) (sort) (__))
+         5)))
+
+
+(defn simple-recursion
+  "A recursive function is a function which calls itself. This is one of the fundamental techniques used in functional programming."
+  [__]
+  (is (= __ ((fn foo [x] (when (> x 0) (conj (foo (dec x)) x))) 5))))
+
+
+(defn intro-to-reduce
+  "Reduce takes a 2 argument function and an optional starting value. It then applies the function to the first 2 items in the sequence (or the starting value and the first element of the sequence). In the next iteration the function will be called on the previous return value and the next item from the sequence, thus reducing the entire collection to one value. Don't worry, it's not as complicated as it sounds."
+  [__]
+  (is (= 15 (reduce __ [1 2 3 4 5])))
+  (is (=  0 (reduce __ [])))
+  (is (=  6 (reduce __ 1 [2 3]))))
+
+
+(defn regular-expressions
+  "Regex patterns are supported with a special reader macro."
+  [__]
+  (is (= __ (apply str (re-seq #"[A-Z]+" "bA1B3Ce ")))))
+
+
+(defmacro let-it-be
+  "Can you bind x, y, and z so that these are all true?"
+  [__]
+  `(is (= 10 (let ~__ (+ ~'x ~'y))))
+  `(is (=  4 (let ~__ (+ ~'y ~'z))))
+  `(is (=  1 (let ~__ ~'z))))
+
+
+(defn local-bindings
+  "Clojure lets you give local names to values using the special let-form."
+  [__]
+  (is (= __ (let [x 5] (+ 2 x))))
+  (is (= __ (let [x 3, y 10] (- y x))))
+  (is (= __ (let [x 21] (let [y 3] (/ x y))))))
+
+
 (defn sequences-filter
   "The filter function takes two arguments: a predicate function (f) and a sequence (s). Filter returns a new sequence consisting of all the items of s for which (f item) returns true."
   [__]
