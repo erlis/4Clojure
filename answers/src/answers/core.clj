@@ -1,5 +1,6 @@
 (ns answers.core
-  (:require [answers.elementary :as elementary]))
+  (:require [answers.elementary :as elementary]
+            [answers.easy :as easy]))
 
 
 (defmacro show
@@ -34,4 +35,6 @@
   (show elementary/intro-to-reduce +)
   (show elementary/simple-recursion '(5 4 3 2 1))
   (show elementary/rearranging-code-> last)
+  (show elementary/recurring-theme [7 6 5 4 3])
+  (show easy/last-element #(-> % reverse first))
 )
