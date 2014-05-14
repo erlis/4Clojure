@@ -37,4 +37,6 @@
   (show elementary/rearranging-code-> last)
   (show elementary/recurring-theme [7 6 5 4 3])
   (show easy/last-element #(-> % reverse first))
+  (show easy/penultimate-element (comp second reverse))
+  (show easy/nth-element easy/nth-element-answer)
 )
