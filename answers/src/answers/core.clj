@@ -39,4 +39,5 @@
   (show easy/last-element #(-> % reverse first))
   (show easy/penultimate-element (comp second reverse))
   (show easy/nth-element easy/nth-element-answer)
+  (show easy/count-a-sequence easy/count-a-sequence-answer)
 )

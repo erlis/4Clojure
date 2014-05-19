@@ -1,6 +1,25 @@
 (ns answers.easy
   (:use [clojure.test :only (is)]))
 
+(defn count-a-sequence
+  "Write a function which returns the total number of elements in a sequence.
+   ::Special Restriction:: count"
+  [__]
+  (is (= (__ '(1 2 3 3 1)) 5))
+  (is (= (__ "Hello World") 11))
+  (is (= (__ [[1 2] [3 4] [5 6]]) 3))
+  (is (= (__ '(13)) 1))
+  (is (= (__ '(:a :b :c)) 3)))
+
+(defn count-a-sequence-answer
+  [xs]
+  (loop [col xs,
+         res 0]
+    (if (empty? col)
+      res
+      (recur (rest col) ())))
+)
+
 
 (defn nth-element
   "Write a function which returns the Nth element from a sequence.
