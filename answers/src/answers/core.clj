@@ -40,4 +40,8 @@
   (show easy/penultimate-element (comp second reverse))
   (show easy/nth-element easy/nth-element-answer)
   (show easy/count-a-sequence easy/count-a-sequence-answer)
+  (show easy/reverse-a-sequence easy/reverse-a-sequence-answer)
+  (show easy/sum-it-all-up easy/sum-it-all-up-answer)
+  (show easy/find-the-odd-numbers easy/find-the-odd-numbers-answer)
+  (show easy/fibonacci-seqs easy/fibonacci-seqs-answer)
 )
