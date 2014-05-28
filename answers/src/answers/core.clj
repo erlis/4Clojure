@@ -46,4 +46,5 @@
   (show easy/fibonacci-seqs easy/fibonacci-seqs-answer)
   (show easy/palindrome-detector easy/palindrome-detector-answer)
   (show easy/flatten-a-sequence easy/flatten-a-sequence-answer)
+  (show easy/get-the-caps easy/get-the-caps-answer)
 )

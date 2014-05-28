@@ -1,6 +1,18 @@
 (ns answers.easy
   (:use [clojure.test :only (is)]))
 
+(defn get-the-caps
+  "Write a function which takes a string and returns a new string containing only the capital letters."
+  [__]
+  (is (= (__ "HeLlO, WoRlD!") "HLOWRD"))
+  (is (empty? (__ "nothing")))
+  (is (= (__ "$#A(*&987Zf") "AZ")))
+
+(defn get-the-caps-answer
+  [x]
+  (apply str (filter #(let [i (int %)] (and (>= i 65) (<= i 90) )) x))) 
+
+
 (defn flatten-a-sequence
   "Write a function which flattens a sequence"
   [__]
@@ -9,8 +21,10 @@
   (is (= (__ '((((:a))))) '(:a))))
 
 (defn flatten-a-sequence-answer
-  [xs]
-  xs)
+  [coll]
+  (mapcat #(if (coll? %)
+             (flatten-a-sequence-answer %)
+             [%]) coll))
 
 
 (defn palindrome-detector
