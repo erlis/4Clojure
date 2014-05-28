@@ -1,6 +1,33 @@
 (ns answers.easy
   (:use [clojure.test :only (is)]))
 
+(defn flatten-a-sequence
+  "Write a function which flattens a sequence"
+  [__]
+  (is (= (__ '((1 2) 3 [4 [5 6]])) '(1 2 3 4 5 6)))
+  (is (= (__ ["a" ["b"] "c"]) '("a" "b" "c")))
+  (is (= (__ '((((:a))))) '(:a))))
+
+(defn flatten-a-sequence-answer
+  [xs]
+  xs)
+
+
+(defn palindrome-detector
+  "Write a function which returns true if the given sequence is a palindrome.
+   Hint: 'racecar' does not equal '\\r \\a \\c \\e \\c \\a \\r)"
+  [__]
+  (is (false? (__ '(1 2 3 4 5))))
+  (is (true? (__ "racecar")))
+  (is (true? (__ [:foo :bar :foo])))
+  (is (true? (__ '(1 1 3 3 1 1))))
+  (is (false? (__ '(:a :b :c)))))
+
+(defn palindrome-detector-answer
+  [xs]
+  (= (seq xs) (reverse xs)))
+
+
 (defn fibonacci-seqs
   "Write a function which returns the first X fibonacci numbers."
   [__]
