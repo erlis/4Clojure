@@ -1,6 +1,19 @@
 (ns answers.easy
   (:use [clojure.test :only (is)]))
 
+(defn compress-a-sequence
+  "Write a function which removes consecutive duplicates from a sequence."
+  [__]
+  (is (= (apply str (__ "Leeeeeerrroyyy")) "Leroy"))
+  (is (= (__ [1 1 2 3 3 2 2 3]) '(1 2 3 2 3)))
+  (is (= (__ [[1 2] [1 2] [3 4] [1 2]]) '([1 2] [3 4] [1 2])))
+)
+
+(defn compress-a-sequence-answer
+  [coll]
+  (map first (partition-by identity coll))) 
+
+
 (defn get-the-caps
   "Write a function which takes a string and returns a new string containing only the capital letters."
   [__]
