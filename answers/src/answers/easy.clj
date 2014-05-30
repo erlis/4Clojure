@@ -11,7 +11,7 @@
 
 (defn duplicate-a-sequence-answer
   [coll]
-  coll)
+  (mapcat #(vector % %) coll))
 
 
 (defn pack-a-sequence
