@@ -1,6 +1,31 @@
 (ns answers.easy
   (:use [clojure.test :only (is)]))
 
+(defn duplicate-a-sequence
+  "Write a function which duplicates each element of a sequence."
+  [__]
+  (is (= (__ [1 2 3]) '(1 1 2 2 3 3)))
+  (is (= (__ [:a :a :b :b]) '(:a :a :a :a :b :b :b :b)))
+  (is (= (__ [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4])))
+  (is (= (__ [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))))
+
+(defn duplicate-a-sequence-answer
+  [coll]
+  coll)
+
+
+(defn pack-a-sequence
+  "Write a function which packs consecutive duplicates into sub-lists."
+  [__]
+  (is (= (__ [1 1 2 1 1 1 3 3]) '((1 1) (2) (1 1 1) (3 3))))
+  (is (= (__ [:a :a :b :b :c]) '((:a :a) (:b :b) (:c))))
+  (is (= (__ [[1 2] [1 2] [3 4]]) '(([1 2] [1 2]) ([3 4])))))
+
+(defn pack-a-sequence-answer
+  [coll]
+  (partition-by identity coll))
+
+
 (defn compress-a-sequence
   "Write a function which removes consecutive duplicates from a sequence."
   [__]
