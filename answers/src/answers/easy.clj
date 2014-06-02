@@ -1,6 +1,16 @@
 (ns answers.easy
   (:use [clojure.test :only (is)]))
 
+(defn intro-to-iterate
+  "The iterate function can be used to produce an infinite lazy sequence."
+  [__]
+  (is (= __ (take 5 (iterate #(+ 3 %) 1)))))
+
+(defn intro-to-iterate-answer
+  [_]
+  '(4 5 6 7 8))
+
+
 (defn reverse-interleave
   "Write a function which reverses the interleave process into x number of subsequences."
   [__]

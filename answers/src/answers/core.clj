@@ -1,6 +1,7 @@
 (ns answers.core
   (:require [answers.elementary :as elementary]
-            [answers.easy :as easy]))
+            [answers.easy :as easy]
+            [answers.medium :as medium]))
 
 
 (defmacro show
@@ -58,4 +59,7 @@
   (show easy/drop-every-nth-item easy/drop-every-nth-item-answer)
   (show easy/factorial-fun easy/factorial-fun-answer)
   (show easy/reverse-interleave easy/reverse-interleave-answer)
+  (show medium/rotate-sequence medium/rotate-sequence-answer)
+  (show easy/intro-to-iterate '(1 4 7 10 13))
+  (show medium/flipping-out medium/flipping-out-answer)
 )
