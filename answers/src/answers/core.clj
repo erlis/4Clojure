@@ -62,4 +62,7 @@
   (show medium/rotate-sequence medium/rotate-sequence-answer)
   (show easy/intro-to-iterate '(1 4 7 10 13))
   (show medium/flipping-out medium/flipping-out-answer)
+  (show easy/contain-yourself 4)
+  (show easy/intro-to-some 6)
+  (show easy/split-a-sequence easy/split-a-sequence-answer)
 )

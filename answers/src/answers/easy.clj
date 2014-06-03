@@ -1,14 +1,41 @@
 (ns answers.easy
   (:use [clojure.test :only (is)]))
 
+(defn split-a-sequence
+  "Write a function which will split a sequence into two parts.
+   SPECIAL RESTRICTIONS: split-at"
+  [__]
+  (is (= (__ 3 [1 2 3 4 5 6]) [[1 2 3] [4 5 6]]))
+  (is (= (__ 1 [:a :b :c :d]) [[:a] [:b :c :d]]))
+  (is (= (__ 2 [[1 2] [3 4] [5 6]]) [[[1 2] [3 4]] [[5 6]]])))
+
+(defn split-a-sequence-answer
+  [n coll]
+  (let [p (partition-all n coll)]
+    (vector (first p) (mapcat identity (rest p)))))
+
+
+(defn intro-to-some
+  "The some function takes a predicate function and a collection. It returns the first logical true value of (predicate x) where x is an item in the collection."
+  [__]
+  (is (= __ (some #{2 7 6} [5 6 7 8])))
+  (is (= __ (some #(when (even? %) %) [5 6 7 8]))))
+
+
+(defn contain-yourself
+  "The contains? function checks if a KEY is present in a given collection. This often leads beginner clojurians to use it incorrectly with numerically indexed collections like vectors and lists."
+  [__]
+  (is (contains? #{4 5 6} __))
+  (is (contains? [1 1 1 1 1] __))
+  (is (contains? {4 :a 2 :b} __))
+  ;; (is (not (contains? '(1 2 4) __)))
+  )
+
+
 (defn intro-to-iterate
   "The iterate function can be used to produce an infinite lazy sequence."
   [__]
   (is (= __ (take 5 (iterate #(+ 3 %) 1)))))
-
-(defn intro-to-iterate-answer
-  [_]
-  '(4 5 6 7 8))
 
 
 (defn reverse-interleave
