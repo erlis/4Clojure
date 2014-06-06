@@ -1,6 +1,18 @@
 (ns answers.easy
   (:use [clojure.test :only (is)]))
 
+(defn intro-to-destructuring
+  "Let bindings and function parameter lists support destructuring."
+  []
+  (is (= [2 4] (let [[a b c d e f g] (range)] [c e]))))
+
+
+(defn advanced-destructuring
+  "Here is an example of some more sophisticated destructuring."
+  [__]
+  (is (= [1 2 [3 4 5] [1 2 3 4 5]] (let [[a b & c :as d] __] [a b c d]))))
+
+
 (defn split-a-sequence
   "Write a function which will split a sequence into two parts.
    SPECIAL RESTRICTIONS: split-at"

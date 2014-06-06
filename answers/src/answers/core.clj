@@ -1,7 +1,8 @@
 (ns answers.core
   (:require [answers.elementary :as elementary]
             [answers.easy :as easy]
-            [answers.medium :as medium]))
+            [answers.medium :as medium]
+            [answers.hard :as hard]))
 
 
 (defmacro show
@@ -65,4 +66,9 @@
   (show easy/contain-yourself 4)
   (show easy/intro-to-some 6)
   (show easy/split-a-sequence easy/split-a-sequence-answer)
+  (show medium/split-by-type medium/split-by-type-answer)
+  (show easy/advanced-destructuring [1 2 3 4 5])
+  (show easy/intro-to-destructuring)
+  (show hard/longest-increasing-sub-seq hard/longest-increasing-sub-seq-answer)
+  (show medium/partition-a-sequence medium/partition-a-sequence-answer)
 )
