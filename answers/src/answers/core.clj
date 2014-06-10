@@ -71,4 +71,6 @@
   (show easy/intro-to-destructuring)
   (show hard/longest-increasing-sub-seq hard/longest-increasing-sub-seq-answer)
   (show medium/partition-a-sequence medium/partition-a-sequence-answer)
+  (show elementary/rearranging-code->> #(reduce + %))
+  (show hard/analyze-a-tic-tac-toe-board hard/analyze-a-tic-tac-toe-board-answer)
 )

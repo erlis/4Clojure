@@ -1,6 +1,13 @@
 (ns answers.elementary
   (:use [clojure.test :only (is)]))
 
+(defn rearranging-code->>
+  "The ->> macro threads an expression x through a variable number of forms. First, x is inserted as the last item in the first form, making a list of it if it is not a list already. Then the first form is inserted as the last item in the second form, making a list of that form if necessary. This process continues for all the forms. Using ->> can sometimes make your code more readable."
+  [__]
+  (is (= (__ (map inc (take 3 (drop 2 [2 5 4 1 3 6]))))
+   (->> [2 5 4 1 3 6] (drop 2) (take 3) (map inc) (__))
+   11)))
+
 
 (defn recurring-theme
   "Clojure only has one non-stack-consuming looping construct: recur. Either a function or a loop can be used as the recursion point. Either way, recur rebinds the bindings of the recursion point to the values it is passed. Recur must be called from the tail-position, and calling it elsewhere will result in an error."
