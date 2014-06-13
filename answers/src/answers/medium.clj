@@ -1,5 +1,24 @@
 (ns answers.medium
+  (:require [clojure.string])
   (:use [clojure.test :only (is)]))
+
+(defn filter-perfect-squares
+  "Given a string of comma separated integers, write a function which returns a new comma separated string that only contains the numbers which are perfect squares."
+  [__]
+  (is (= (__ "4,5,6,7,8,9") "4,9"))
+  (is (= (__ "15,16,25,36,37") "16,25,36")))
+
+
+(defn filter-perfect-squares-answer
+  [s]
+  (let [nseq (->>(clojure.string/split s #",")
+                 (map #(Integer/parseInt %) ))
+        lzsquares (map (fn [x] (* x x)) (iterate inc 1))
+        maxinseq (apply max nseq) ]
+    (->> (map #(some #{%} (take-while (partial >= maxinseq) lzsquares)) nseq)
+         (keep identity)
+         (clojure.string/join ",")
+         )))
 
 (defn partition-a-sequence
   "Write a function which returns a sequence of lists of x items each. Lists of less than x items should not be returned.

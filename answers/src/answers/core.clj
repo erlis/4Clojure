@@ -73,4 +73,5 @@
   (show medium/partition-a-sequence medium/partition-a-sequence-answer)
   (show elementary/rearranging-code->> #(reduce + %))
   (show hard/analyze-a-tic-tac-toe-board hard/analyze-a-tic-tac-toe-board-answer)
+  (show medium/filter-perfect-squares medium/filter-perfect-squares-answer)
 )
