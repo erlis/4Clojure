@@ -1,5 +1,5 @@
 (ns answers.hard
-  (:use [clojure.test :only (is)]))
+  (:require [clojure.test :refer [is]]))
 
 (defn analyze-a-tic-tac-toe-board
   "A tic-tac-toe board is represented by a two dimensional vector. X is represented by :x, O is represented by :o, and empty is represented by :e. A player wins by placing three Xs or three Os in a horizontal, vertical, or diagonal row. Write a function which analyzes a tic-tac-toe board and returns :x if X has won, :o if O has won, and nil if neither player has won."

@@ -1,6 +1,6 @@
 (ns answers.medium
-  (:require [clojure.string])
-  (:use [clojure.test :only (is)]))
+  (:require [clojure.string]
+            [clojure.test :refer [is]]))
 
 (defn filter-perfect-squares
   "Given a string of comma separated integers, write a function which returns a new comma separated string that only contains the numbers which are perfect squares."
