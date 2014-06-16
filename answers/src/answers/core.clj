@@ -74,4 +74,6 @@
   (show elementary/rearranging-code->> #(reduce + %))
   (show hard/analyze-a-tic-tac-toe-board hard/analyze-a-tic-tac-toe-board-answer)
   (show medium/filter-perfect-squares medium/filter-perfect-squares-answer)
+  (show medium/count-occurrences medium/count-occurrences-answer)
+  (show medium/find-distinct-items medium/find-distinct-items-answer)
 )

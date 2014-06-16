@@ -2,6 +2,36 @@
   (:require [clojure.string]
             [clojure.test :refer [is]]))
 
+(defn find-distinct-items
+  "Write a function which removes the duplicates from a sequence. Order of the items must be maintained.
+  SPECIAL RESTRICTION: distinct"
+  [__]
+  (is (= (__ [1 2 1 3 1 2 4]) [1 2 3 4]))
+  (is (= (__ [:a :a :b :b :c :c]) [:a :b :c]))
+  (is (= (__ '([2 4] [1 2] [1 3] [1 3])) '([2 4] [1 2] [1 3])))
+  (is (= (__ (range 50)) (range 50))))
+
+(defn find-distinct-items-answer
+  [coll]
+  (reduce (fn [sol x]
+            (if (some #{x} sol)
+              sol
+              (concat sol [x])) ) (empty coll) coll))
+
+
+(defn count-occurrences
+  "Write a function which returns a map containing the number of occurences of each distinct item in a sequence.
+  SPECIAL RESTRICTION: frequencies"
+  [__]
+  (is (= (__ [1 1 2 3 2 1 1]) {1 4, 2 2, 3 1}))
+  (is (= (__ [:b :a :b :a :b]) {:a 2, :b 3}))
+  (is (= (__ '([1 2] [1 3] [1 3])) {[1 2] 1, [1 3] 2})))
+
+(defn count-occurrences-answer
+  [coll]
+  (apply hash-map (mapcat (fn [[key xs]] [key (count xs)]) (group-by identity coll))))
+
+
 (defn filter-perfect-squares
   "Given a string of comma separated integers, write a function which returns a new comma separated string that only contains the numbers which are perfect squares."
   [__]
