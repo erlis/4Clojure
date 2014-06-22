@@ -76,4 +76,5 @@
   (show medium/filter-perfect-squares medium/filter-perfect-squares-answer)
   (show medium/count-occurrences medium/count-occurrences-answer)
   (show medium/find-distinct-items medium/find-distinct-items-answer)
+  (show medium/function-composition medium/function-composition-answer)
 )

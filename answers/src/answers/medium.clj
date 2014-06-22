@@ -2,6 +2,24 @@
   (:require [clojure.string]
             [clojure.test :refer [is]]))
 
+(defn function-composition
+  "Write a function which allows you to create function compositions. The parameter list should take a variable number of functions, and create a function applies them from right-to-left.
+  SPECIAL RESTRICTION: comp"
+  [__]
+  (is (= [3 2 1] ((__ rest reverse) [1 2 3 4])))
+  (is (= 5 ((__ (partial + 3) second) [1 2 3 4])))
+  (is (= true ((__ zero? #(mod % 8) +) 3 5 7 9)))
+  (is (= "HELLO" ((__ #(.toUpperCase %) #(apply str %) take) 5 "hello world"))))
+
+(defn function-composition-answer
+  [& fs]
+  ((fn my-comp [xs]
+     (if (= 1 (count xs))
+       (first xs)
+       (fn [& args] ((first xs) (apply (my-comp (rest xs)) args))) ))
+   fs))
+
+
 (defn find-distinct-items
   "Write a function which removes the duplicates from a sequence. Order of the items must be maintained.
   SPECIAL RESTRICTION: distinct"
