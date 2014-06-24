@@ -2,6 +2,31 @@
   (:require [clojure.string]
             [clojure.test :refer [is]]))
 
+(defn sequence-reductions
+  "Write a function which behaves like reduce, but returns each intermediate value of the reduction. Your function must accept either two or three arguments, and the return sequence must be lazy.
+  SPECIAL RESTRICTIONS: reductions"
+  [__]
+  (is (= (take 5 (__ + (range))) [0 1 3 6 10]))
+  (is (= (__ conj [1] [2 3 4]) [[1] [1 2] [1 2 3] [1 2 3 4]]))
+  (is (= (last (__ * 2 [3 4 5])) (reduce * 2 [3 4 5]) 120)))
+
+(defn sequence-reductions-answer
+  [__])
+
+(defn juxtaposition
+  "Take a set of functions and return a new function that takes a variable number of arguments and returns a sequence containing the result of applying each function left-to-right to the argument list.
+  SPECIAL RESTRICTION: juxt"
+  [__]
+  (is (= [21 6 1] ((__ + max min) 2 3 5 1 6 4)))
+  (is (= ["HELLO" 5] ((__ #(.toUpperCase %) count) "hello")))
+  (is (= [2 6 4] ((__ :a :c :b) {:a 2, :b 4, :c 6, :d 8 :e 10}))))
+
+(defn juxtaposition-answer
+  [& fargs]
+  (fn [& args]
+    (map #(apply % args) fargs)))
+
+
 (defn function-composition
   "Write a function which allows you to create function compositions. The parameter list should take a variable number of functions, and create a function applies them from right-to-left.
   SPECIAL RESTRICTION: comp"

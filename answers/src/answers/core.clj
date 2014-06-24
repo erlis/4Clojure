@@ -77,4 +77,6 @@
   (show medium/count-occurrences medium/count-occurrences-answer)
   (show medium/find-distinct-items medium/find-distinct-items-answer)
   (show medium/function-composition medium/function-composition-answer)
+  (show medium/juxtaposition medium/juxtaposition-answer)
+  (show medium/sequence-reductions medium/sequence-reductions-answer)
 )
