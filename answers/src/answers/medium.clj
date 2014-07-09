@@ -11,7 +11,12 @@
   (is (= (last (__ * 2 [3 4 5])) (reduce * 2 [3 4 5]) 120)))
 
 (defn sequence-reductions-answer
-  [__])
+  ([f coll] (sequence-reductions-answer f (first coll) (rest coll) ))
+  ([f val coll]
+     (if (empty? coll)
+       [val]
+       (cons val (lazy-seq (sequence-reductions-answer f (f val (first coll)) (rest coll)))))))
+
 
 (defn juxtaposition
   "Take a set of functions and return a new function that takes a variable number of arguments and returns a sequence containing the result of applying each function left-to-right to the argument list.
