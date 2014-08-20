@@ -1,6 +1,18 @@
 (ns answers.easy
   (:use [clojure.test :only (is)]))
 
+(defn map-construction
+  "Write a function which takes a vector of keys and a vector of values and constructs a map from them.
+   Special Restrictions: zipmap"
+  [__]
+  (is (= (__ [:a :b :c] [1 2 3]) {:a 1, :b 2, :c 3}))
+  (is (= (__ [1 2 3 4] ["one" "two" "three"]) {1 "one", 2 "two", 3 "three"}))
+  (is (= (__ [:foo :bar] ["foo" "bar" "baz"]) {:foo "foo", :bar "bar"})))
+
+(defn map-construction-answer
+  [vk vv]
+  (apply hash-map (mapcat vector vk vv)))
+
 (defn intro-to-destructuring
   "Let bindings and function parameter lists support destructuring."
   []

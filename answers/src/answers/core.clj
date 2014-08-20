@@ -79,4 +79,5 @@
   (show medium/function-composition medium/function-composition-answer)
   (show medium/juxtaposition medium/juxtaposition-answer)
   (show medium/sequence-reductions medium/sequence-reductions-answer)
+  (show easy/map-construction easy/map-construction-answer)
 )
