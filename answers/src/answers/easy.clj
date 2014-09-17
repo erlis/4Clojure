@@ -1,5 +1,5 @@
 (ns answers.easy
-  (:use [clojure.test :only (is)]))
+  (:require [clojure.test :refer [is]]))
 
 (defn map-construction
   "Write a function which takes a vector of keys and a vector of values and constructs a map from them.
