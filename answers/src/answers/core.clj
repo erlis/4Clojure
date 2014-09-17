@@ -80,4 +80,5 @@
   (show medium/juxtaposition medium/juxtaposition-answer)
   (show medium/sequence-reductions medium/sequence-reductions-answer)
   (show easy/map-construction easy/map-construction-answer)
+  (show easy/reimplement-iterate easy/reimplement-iterate-answer)
 )
