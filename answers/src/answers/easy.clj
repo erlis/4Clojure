@@ -1,6 +1,30 @@
 (ns answers.easy
   (:require [clojure.test :refer [is]]))
 
+(defn group-a-sequence
+  "Given a function f and a sequence s, write a function which returns a map. The keys should be the values of f applied to each item in s. The value at each key should be a vector of corresponding items in the order they appear in s.
+   Special Restrictions: group-by"
+  [__]
+  (is (= (__ #(> % 5) [1 3 6 8]) {false [1 3], true [6 8]}))
+  (is (= (__ #(apply / %) [[1 2] [2 4] [4 6] [3 6]])
+         {1/2 [[1 2] [2 4] [3 6]], 2/3 [[4 6]]}))
+  (is (= (__ count [[1] [1 2] [3] [1 2 3] [2 3]])
+         {1 [[1] [3]], 2 [[1 2] [2 3]], 3 [[1 2 3]]})))
+
+(defn group-a-sequence-answer
+  [f s]
+  (loop [col s
+         sol {}]
+    (if (empty? col)
+      sol
+      (let [key (f (first col))]
+        (if (contains? sol key)
+          (recur (rest col)
+                 (assoc sol key (conj (sol key) (first col))))
+          (recur (rest col)
+                 (assoc sol key [(first col)])))))))
+
+
 (defn reimplement-iterate
   "Given a side-effect free function f and an initial value x write a function which returns an infinite lazy sequence of x, (f x), (f (f x)), (f (f (f x))), etc.
   Special Restrictions: iterate"

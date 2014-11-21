@@ -81,4 +81,5 @@
   (show medium/sequence-reductions medium/sequence-reductions-answer)
   (show easy/map-construction easy/map-construction-answer)
   (show easy/reimplement-iterate easy/reimplement-iterate-answer)
+  (show easy/group-a-sequence easy/group-a-sequence-answer)
 )
