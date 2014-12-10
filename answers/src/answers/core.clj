@@ -82,4 +82,5 @@
   (show easy/map-construction easy/map-construction-answer)
   (show easy/reimplement-iterate easy/reimplement-iterate-answer)
   (show easy/group-a-sequence easy/group-a-sequence-answer)
+  (show medium/black-box-testing medium/black-box-testing-answer)
 )
