@@ -1,6 +1,21 @@
 (ns answers.easy
   (:require [clojure.test :refer [is]]))
 
+(defn greatest-common-divisor
+  "Given two integers, write a function which returns the greatest common divisor."
+  [__]
+  (is (= (__ 2 4) 2))
+  (is (= (__ 10 5) 5))
+  (is (= (__ 5 7) 1))
+  (is (= (__ 1023 858) 33)))
+
+(defn greatest-common-divisor-answer
+  [x y]
+  (->> (range 1 (inc (min x y)))
+       (filter #(and (= 0 (mod y %)) (= 0 (mod x %))) )
+       (apply max)))
+
+
 (defn group-a-sequence
   "Given a function f and a sequence s, write a function which returns a map. The keys should be the values of f applied to each item in s. The value at each key should be a vector of corresponding items in the order they appear in s.
    Special Restrictions: group-by"

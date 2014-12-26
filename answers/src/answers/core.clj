@@ -83,4 +83,5 @@
   (show easy/reimplement-iterate easy/reimplement-iterate-answer)
   (show easy/group-a-sequence easy/group-a-sequence-answer)
   (show medium/black-box-testing medium/black-box-testing-answer)
+  (show easy/greatest-common-divisor easy/greatest-common-divisor-answer)
 )
