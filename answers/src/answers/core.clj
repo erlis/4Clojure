@@ -84,4 +84,5 @@
   (show easy/group-a-sequence easy/group-a-sequence-answer)
   (show medium/black-box-testing medium/black-box-testing-answer)
   (show easy/greatest-common-divisor easy/greatest-common-divisor-answer)
+  (show medium/prime-numbers medium/prime-numbers-answer)
 )

@@ -2,6 +2,24 @@
   (:require [clojure.string]
             [clojure.test :refer [is]]))
 
+(defn prime-numbers
+  "Write a function which returns the first x number of prime numbers"
+  [__]
+  (is (= (__ 2) [2 3]))
+  (is (= (__ 5) [2 3 5 7 11]))
+  (is (= (last (__ 100)) 541)))
+
+(defn prime-numbers-answer 
+  [n]
+  (loop [x 3
+         acc [2]]
+    (if (= n (count acc))
+      acc
+      (if (some zero? (map #(mod x %) acc))
+        (recur (inc x) acc)
+        (recur (inc x) (conj acc x))))))
+
+
 (defn black-box-testing
   " Clojure has many sequence types, which act in subtly different ways. The core functions typically convert them into a uniform 'sequence' type and work with them that way, but it can be important to understand the behavioral and performance differences so that you know which kind is appropriate for your application.
 
