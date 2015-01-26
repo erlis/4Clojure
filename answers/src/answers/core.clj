@@ -85,4 +85,5 @@
   (show medium/black-box-testing medium/black-box-testing-answer)
   (show easy/greatest-common-divisor easy/greatest-common-divisor-answer)
   (show medium/prime-numbers medium/prime-numbers-answer)
+  (show medium/merge-with-a-function medium/merge-with-a-function-answer)
 )
