@@ -86,4 +86,5 @@
   (show easy/greatest-common-divisor easy/greatest-common-divisor-answer)
   (show medium/prime-numbers medium/prime-numbers-answer)
   (show medium/merge-with-a-function medium/merge-with-a-function-answer)
+  (show medium/word-sorting medium/word-sorting-answer)
 )
