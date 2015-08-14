@@ -87,4 +87,5 @@
   (show medium/prime-numbers medium/prime-numbers-answer)
   (show medium/merge-with-a-function medium/merge-with-a-function-answer)
   (show medium/word-sorting medium/word-sorting-answer)
+  (show medium/euler-totient-function medium/euler-totient-function-answer)
 )

@@ -2,6 +2,19 @@
   (:require [clojure.string]
             [clojure.test :refer [is]]))
 
+
+(defn euler-totient-function
+  "Two numbers are coprime if their greatest common divisor equals 1. Euler's totient function f(x) is defined as the number of positive integers less than x which are coprime to x. The special case f(1) equals 1. Write a function which calculates Euler's totient function."
+  [__]
+  (is (= (__ 1) 1))
+  (is (= (__ 10) (count '(1 3 7 9)) 4))
+  (is (= (__ 40) 16))
+  (is (= (__ 99) 60)))
+
+(defn euler-totient-function-answer
+  [x]
+  (count (filter #(= 1 ((fn gcd [a b] (if (= 0 b) a (gcd b (mod a b)))) x %) )  (range 1 (inc x)))))
+
 (defn word-sorting
   "Write a function that splits a sentence up into a sorted list of words. Capitalization should not affect sort order and punctuation should be ignored."
   [__]
