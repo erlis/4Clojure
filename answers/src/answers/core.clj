@@ -89,4 +89,5 @@
   (show medium/word-sorting medium/word-sorting-answer)
   (show medium/euler-totient-function medium/euler-totient-function-answer)
   (show medium/intro-to-trampoline (medium/intro-to-trampoline-answer))
+  (show medium/anagram-finder medium/anagram-finder-answer)
 )

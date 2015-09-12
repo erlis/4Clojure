@@ -2,6 +2,25 @@
   (:require [clojure.string]
             [clojure.test :refer [is]]))
           
+(defn anagram-finder
+  "Write a function which finds all the anagrams in a vector of words. A word x is an anagram of word y if all the letters in x can be rearranged in a different order to form y. Your function should return a set of sets, where each sub-set is a group of words which are anagrams of each other. Each sub-set should have at least two words. Words without any anagrams should not be included in the result."
+  [__]
+  (is (= (__ ["meat" "mat" "team" "mate" "eat"])
+   #{#{"meat" "team" "mate"}}))
+  (is (= (__ ["veer" "lake" "item" "kale" "mite" "ever"])
+   #{#{"veer" "ever"} #{"lake" "kale"} #{"mite" "item"}})))          
+
+(defn anagram-finder-answer
+  [words]
+  (->> (map (fn [w] (assoc {} w (apply merge-with + (map #(hash-map %1 1) w)))) words)
+     (group-by vals)
+     (vals)
+     (filter #(> (count %1) 1))
+     (map #(flatten (map (fn [x] (keys x) ) %1 )) )
+     (map set)
+     set
+))
+          
 (defn intro-to-trampoline
   "The trampoline function takes a function f and a variable number of parameters. Trampoline calls f with any parameters that were supplied. If f returns a function, trampoline calls that function with no arguments. This is repeated, until the return value is not a function, and then trampoline returns that non-function value. This is useful for implementing mutually recursive algorithms in a way that won't consume the stack."
   [__]
@@ -30,6 +49,7 @@
   [x]
   (count (filter #(= 1 ((fn gcd [a b] (if (= 0 b) a (gcd b (mod a b)))) x %) )  (range 1 (inc x)))))
 
+
 (defn word-sorting
   "Write a function that splits a sentence up into a sorted list of words. Capitalization should not affect sort order and punctuation should be ignored."
   [__]
@@ -44,6 +64,7 @@
 (defn word-sorting-answer
   [s]
   (sort-by #(.toUpperCase %) (clojure.string/split s #"[^\w+]")))
+
 
 (defn merge-with-a-function
   "Write a function which takes a function f and a variable number of maps. Your function should return a map that consists of the rest of the maps conj-ed onto the first. If a key occurs in more than one map, the mapping(s) from the latter (left-to-right) should be combined with the mapping in the result by calling (f val-in-result val-in-latter)
