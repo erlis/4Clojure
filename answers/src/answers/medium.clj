@@ -4,12 +4,25 @@
 
 (defn reimplement-trampoline
   "Reimplement the function described in 'Intro to Trampoline'.
-   Restriction: trampoline
-  [__]")
+   Restriction: trampoline"
+  [__]
+  (is (= (letfn [(triple [x] #(sub-two (* 3 x)))
+                 (sub-two [x] #(stop?(- x 2)))
+                 (stop? [x] (if (> x 50) x #(triple x)))]
+           (__ triple 2))
+         82))
+  (is (= (letfn [(my-even? [x] (if (zero? x) true #(my-odd? (dec x))))
+          (my-odd? [x] (if (zero? x) false #(my-even? (dec x))))]
+    (map (partial __ my-even?) (range 6)))
+  [true false true false true false])))
+
 
 (defn reimplement-trampoline-answer
-  [f]
-  (f))
+  [f & args]
+  (loop [x (apply f args)]
+    (if (fn? x)
+      (recur (x))
+      x)))  
           
 (defn anagram-finder
   "Write a function which finds all the anagrams in a vector of words. A word x is an anagram of word y if all the letters in x can be rearranged in a different order to form y. Your function should return a set of sets, where each sub-set is a group of words which are anagrams of each other. Each sub-set should have at least two words. Words without any anagrams should not be included in the result."
